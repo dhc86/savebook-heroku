@@ -12,6 +12,7 @@ gem 'puma'
 gem 'tux'
 gem 'geocoder'
 gem 'geokit'
+gem 'pg'
 
 gem 'httparty'
 
