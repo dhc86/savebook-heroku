@@ -1,0 +1,56 @@
+
+<% if @book && @book.errors.any? %>
+  <div>
+    <strong>Some issues in the book details you tryna save, please fix them:</strong>
+    <ul>
+      <% @book.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<div class="background-add-book-form">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4 header-add-book-form">Add a Book to your collection</div>
+    <div class="col-sm-12 white-space"></div>
+    <div class="col-sm-12 white-space"></div>
+  </div>
+  <div class="row">
+      <div class="col-md-6 add-book-form">
+        <form method="post" id="new-book" action="/books">
+            <input  type="text" id="title" name = "title" placeholder=" Title" class="add-book-form-control" value="<%= @book && @book.title %>">
+
+            <div class="form_line">
+              <input  type="text" id="author" name="author" value="<%= @book && @book.author %>" placeholder=" Author" class="add-book-form-control">
+            </div>
+
+            <div class="form_line">
+              <input  type="text" id="isbn" name="isbn" value="<%= @book && @book.isbn %>" placeholder=" ISBN" class="add-book-form-control">
+            </div>
+
+            <div class="form_line">
+              <input  type="text" id="url" name="url" placeholder=" Picture URL (optional)" class="add-book-form-control">
+            </div>
+
+            <div class="form_line">
+              <textarea class="add-book-form-control"  name="description" id="description" rows="100" cols="50" value="<%= @book && @book.description %>" placeholder=" Enter description about the book..."></textarea>
+            </div>
+             <div >
+              <button class="button btn-lg btn-primary addbook-button">Add Book</button>
+            </div>
+        </form>              
+      </div>
+    <div class="col-sm-4">
+      <div id="fill-by-isbn">
+        <form class="form_line">
+         <p>
+          <label id="isbn_text_message">Know the ISBN number? Add Book directly:  </label>
+         </p> 
+          <input  type="text" name="isbn" name="isbn" placeholder=" type ISBN" class="add-book-form-control">
+          <button id="isbn-fill" data-loading-text="Loading..." class="isbn-button button btn btn-primary" autocomplete="off">Submit ISBN</button>          
+        </form>
+      </div>
+    </div>
+  </div>  
+</div>
