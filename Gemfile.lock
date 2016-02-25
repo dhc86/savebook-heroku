@@ -30,6 +30,7 @@ GEM
     minitest (5.8.1)
     multi_json (1.11.2)
     multi_xml (0.5.5)
+    pg (0.18.4)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -85,6 +86,7 @@ DEPENDENCIES
   geocoder
   geokit
   httparty
+  pg
   pry
   puma
   rake
@@ -94,3 +96,6 @@ DEPENDENCIES
   sinatra-contrib
   sqlite3
   tux
+
+BUNDLED WITH
+   1.10.6
